@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RedditServiceService } from './reddit-service.service';
-import {Reddit} from "./Reddit"
+import {Reddit, RedditI} from "./Reddit"
 
 
 @Component({
@@ -11,7 +11,7 @@ import {Reddit} from "./Reddit"
 
 export class AppComponent {
   title = 'RedditAPI';
-  posts: Reddit[] = [];
+  posts: RedditI[] = [];
   constructor(private redditAPI: RedditServiceService){
 
   }
@@ -19,8 +19,8 @@ export class AppComponent {
 getPosts(): void{
 this.redditAPI.displayReddit()
 .subscribe(
-(response: Reddit) => {
-  console.log(response);
+(response: RedditI) => {
+  
   let name: string = "Hello"
   console.log(name);
   console.dir(this.posts);

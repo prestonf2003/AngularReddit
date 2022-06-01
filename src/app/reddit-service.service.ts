@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Reddit} from './Reddit';
+import {RedditI} from './Reddit';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +9,7 @@ export class RedditServiceService {
 
   constructor(private http: HttpClient) { }
 
-  displayReddit(): Observable<Reddit>{
-    return this.http.get<Reddit>("https://www.reddit.com/r/aww/");
+  displayReddit(): Observable<RedditI>{
+    return this.http.get<RedditI>("https://www.reddit.com/r/aww/.json");
   }
 }

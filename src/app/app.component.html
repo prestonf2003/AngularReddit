@@ -1,7 +1,10 @@
-<p>Hello World
-</p>
-<div *ngFor="let p of posts">
-    {{p.title}}
-    <img src="{{p.thumbnail}}" />
-    <a href="{{p.permalink}}">
-</div>
+<button (click)="getPosts()">Click here to browse Reddit</button>
+<ng-container *ngFor="let r of posts; index as i;">
+    <div *ngIf="i<10">
+
+        <p>{{r.data.children[i].data.title}}</p>
+        <img src="{{r.data.children[i].data.thumbnail}}" width="200" height="auto">
+        <br>
+        <a href="{{r.data.children[i].data.url}}">Click here for image source</a>
+    </div>
+</ng-container>
