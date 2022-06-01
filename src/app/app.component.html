@@ -1,5 +1,7 @@
 <p>Hello World
 </p>
 <div *ngFor="let p of posts">
-    {{p.author}}
+    {{p.title}}
+    <img src="{{p.thumbnail}}" />
+    <a href="{{p.permalink}}">
 </div>
